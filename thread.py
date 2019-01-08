@@ -5,7 +5,7 @@ import requests, os, time
 class Thread_mm(object):
 
     def __init__(self):
-        self.mm_folder = 'mm/'
+        self.folder = 'picture/'
         self.each_limit = 60
     
     def get(self, url, i, j):
@@ -14,9 +14,9 @@ class Thread_mm(object):
 
         if response.status.code == 404:
             return '404 not found'
-        if not os.path.exists(self.mm_folder + i):
-            os.makedirs(self.mm_folder + i)
-        with open(self.mm_folder + '%s/%s.jpg'% (i, j), 'wb') as pp:
+        if not os.path.exists(self.folder + i):
+            os.makedirs(self.folder + i)
+        with open(self.folder + '%s/%s.jpg'% (i, j), 'wb') as pp:
             pp.write(pic)
         return 'Get Pictures Ok!'
 
@@ -32,10 +32,11 @@ class Thread_mm(object):
         with futures.ThreadPoolExecutor(works) as e:
             e.map(self.req, [ str(i) + str(j) for i in range(begin, end) for j in range(1, self.each_limit) ])
 
+
 if __name__ == '__main__':
     app = Thread_mm()
 
     start = time.time()
-    app.go_to_start(2500, 2600)
+    app.go_to_start(2500, 2510)
     end = time.time()
     print('Finish Task ^_^, takes time:', end - start)
