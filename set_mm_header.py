@@ -2,7 +2,7 @@
 
 host = "http://www.mm131.com/xinggan/"
 
-def set_header(referer) {
+def set_header(referer):
 	headers = {
 		'Pragma': 'no-cache',
 		'Accept-Encoding': 'gzip, deflate',
@@ -15,13 +15,12 @@ def set_header(referer) {
 	}
 
 	return headers
-}
 
-def referer_set(src) {
+def referer_set(src):
 	ref = src[25:-4].split('/')
 
 	if src[-5:-4]==1:
 		return host + ref[0] + '.html'
 	
 	return host + ref[0] + '_' + ref[1] + '.html'
-}
+    
