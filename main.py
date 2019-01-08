@@ -40,8 +40,8 @@ if __name__ == '__main__':
 
     folder = 'mm131/'
 
-    default_start, default_end = 2400, 2410
+    default_start, default_end = 4680, 4681
 
     finished, newid = getdir(), getnew()
 
-    main_start(finished, newid)
+    main_start(default_start, default_end)

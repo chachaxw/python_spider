@@ -14,6 +14,7 @@ def set_header(referer):
 		'Referer': '{}'.format(referer_set(referer))
 	}
 
+	print(referer_set(referer))
 	return headers
 
 def referer_set(src):

@@ -18,8 +18,10 @@ class Aio_mm(object):
             print('Waiting for request url', url)
             response = await session.get(url, headers = set_header(url))
             pic = await response.read()
-        if response.status.code == 404:
-            return '404 not found'
+
+        if response.status == 404:
+            return '404 not found!'
+
         print('Get response from', url, 'Result is:', response.status)
 
         with open(self.folder + '%s/%s.jpg'% (i, j), 'wb') as pp:
@@ -34,10 +36,11 @@ class Aio_mm(object):
         loop = asyncio.get_event_loop()
         loop.run_until_complete(task)
 
+
 if __name__ == '__main__':
     app = Aio_mm()
 
     start = time.time()
-    app.go_to_start(2500, 2510)
+    app.go_to_start(4600, 4610)
     end = time.time()
     print('Finish Task ^_^, takes time:', end - start)   

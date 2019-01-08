@@ -12,8 +12,8 @@ class Thread_mm(object):
         response = requests.get(url, headers=set_header(url))
         pic = response.content
 
-        if response.status.code == 404:
-            return '404 not found'
+        if response.status == 404:
+            return '404 not found!'
         if not os.path.exists(self.folder + i):
             os.makedirs(self.folder + i)
         with open(self.folder + '%s/%s.jpg'% (i, j), 'wb') as pp:
@@ -37,6 +37,6 @@ if __name__ == '__main__':
     app = Thread_mm()
 
     start = time.time()
-    app.go_to_start(2500, 2510)
+    app.go_to_start(4600, 4610)
     end = time.time()
     print('Finish Task ^_^, takes time:', end - start)
