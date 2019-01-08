@@ -18,10 +18,13 @@ def getnew():
         newid = href[-9:-5]
         return int(newid)
 
+    except Exception as e:
+        return default_end
+
 def main_start(begin, end):
     start_time = time.time()
 
-    if os.name = 'nt':
+    if os.name == 'nt':
         app = Thread_mm()
         app.go_to_start(begin, end)
     else:
@@ -35,9 +38,9 @@ def main_start(begin, end):
 if __name__ == '__main__':
     print("This is a python program")
 
-    folder = 'picture/'
+    folder = 'mm131/'
 
-    default_start, default_end = 2400, 2500
+    default_start, default_end = 2400, 2410
 
     finished, newid = getdir(), getnew()
 
