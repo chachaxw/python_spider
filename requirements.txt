@@ -2,5 +2,5 @@ aiohttp==3.7.4
 aiomultiprocess==0.4.0
 asyncio==3.4.3
 requests==2.21.0
-lxml==4.6.3
+lxml==4.6.5
 beautifulsoup4==4.7.0
